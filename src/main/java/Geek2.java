@@ -112,13 +112,15 @@ class solver
         // remove the loop without losing any nodes
         Node hare = head.next;
         Node tortoise = head;
+        Node tail = hare;
         while( hare != tortoise )
         {
+            tail = hare;
             if(hare==null || hare.next==null) return;
             hare = hare.next.next;
             tortoise = tortoise.next;
         }
-        hare.next = null;
+        tail.next = null;
 
     }
 }
